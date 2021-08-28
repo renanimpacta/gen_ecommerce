@@ -1,6 +1,6 @@
 programa
 {
-	
+	inclua biblioteca Matematica --> math
 	funcao inicio()
 	{
 		//Variáveis
@@ -53,8 +53,21 @@ programa
 		valoresdosProdutos[8] = 15.00
 		valoresdosProdutos[9] = 15.00
 
-		cadeia carrinho[10] 
-		caracter desejaComprar = 'x'
+		cadeia carrinho[10]
+		carrinho[0] = " "
+		carrinho[1] = " "
+		carrinho[2] = " "
+		carrinho[3] = " "
+		carrinho[4] = " "
+		carrinho[5] = " "
+		carrinho[6] = " "
+		carrinho[7] = " "
+		carrinho[8] = " "
+		carrinho[9] = " "
+		
+		real valorTotal = 0.0, valorFinal = 0.0
+		caracter desejaComprar = 'x', continuarCompra = 'x'
+
 		
 		 //Frases para tela inicial
 	    	escreva ("Livraria Gen\n")//nome da loja
@@ -63,72 +76,87 @@ programa
 		escreva ("Olá, deseja fazer uma compra ? S/N: ")//tela inicial final
 		leia(desejaComprar)
 		
-		//Frases para produtos
-		
-		//Inserir a informação do vetor codigoProdutos - Renan
-		se(desejaComprar == 's' ou desejaComprar == 'S'){
-			limpa()
-			escreva("Código:\tLivros:\t                       Valores:\tEstoque:\n")
-			para(inteiro x=0; x<10; x++){
-				escreva(codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
-			}
-			escreva("\n")
-		}
-		senao{
-			escreva("\n\nATÉ BREVE!!!!")
-		}
-		
-		//para(inteiro x=0; x<10; x++){}
-			escreva("Selecione o código do produto que você deseja: ")
-			leia(codigoEscolhido)
-		para(inteiro x=0; x<10; x++){
-			se (codigoEscolhido == codigoProdutos[x]){
-				limpa()
-				escreva ("Código:\tLivro:\t                      Valores:\tEstoque:\n")
-				escreva (codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
-				escreva ("\n")
-				
-				escreva ("Digite a quantidade necessária: ")
-				leia(estoqueEscolhido)
-				se (estoqueEscolhido <= estoque[x]) {
-					limpa()
-					escreva ("carrinho\n")
-
-					carrinho[x]=codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+(valoresdosProdutos[x]*estoqueEscolhido)+"\t"+"\n"
-					
-					escreva (carrinho[x])
-					
-					escreva ("Continuar a compra ? S/N ")
-					leia(desejaComprar)
-				}
-				senao {
-					escreva("Desculpe, estoque indisponível.")
-				}
-				
-				
-			}
-		}
-				se (desejaComprar == 's' ou desejaComprar == 'S')
-				{
-				 limpa()
-				escreva("Código:\tLivros:\t                       Valores:\tEstoque:\n")
-				para(inteiro x=0; x<10; x++){
-				escreva(codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
-				
-				}
-
-				escreva("Selecione o código do produto que você deseja: ")
-				leia(codigoEscolhido)
-				
-				escreva("\n")
-		}
-				senao{
-				escreva("\n\nATÉ BREVE!!!!")
-					
-				}
+		para(inteiro y=0; y<100; y++){
 			
 
-		//Continuar compra?
+			se(desejaComprar == 's' ou desejaComprar == 'S'){
+				limpa()
+				escreva("Código:\tLivros:\t                       Valores:\tEstoque:\n")
+				
+				para(inteiro x=0; x<10; x++){
+					escreva(codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
+				}
+				
+				escreva("\n")
+			}
+			senao{
+				escreva("\n\nATÉ BREVE!!!!")
+				pare
+			}
+			
+	
+			escreva("Selecione o código do produto que você deseja: ")
+			leia(codigoEscolhido)
+			
+			para(inteiro x=0; x<10; x++){
+				se (codigoEscolhido == codigoProdutos[x]){
+					limpa()
+					escreva ("Código:\tLivro:\t                      Valores:\tEstoque:\n")
+					escreva (codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
+					escreva ("\n")
+					
+					escreva ("Digite a quantidade necessária: ")
+					leia(estoqueEscolhido)
+					
+					se (estoqueEscolhido <= estoque[x]) {
+						limpa()
+						escreva ("CARRINHO\n")
+						escreva ("Código:\tLivro:\t                      Valor:\tQuantidade:\n")
+						carrinho[x]=codigoProdutos[x]+"\t"+nomeProdutos[x]+"\tR$"+(valoresdosProdutos[x]*estoqueEscolhido)+"\t   "+estoqueEscolhido+"\n"
+						para(inteiro c=0; c<10; c++){
+							se(carrinho[c] != " "){
+								escreva (carrinho[c])
+								valorTotal = valoresdosProdutos[x]*estoqueEscolhido
+							}
+						}
+						
+						valorFinal = valorTotal+valorFinal
+						
+						escreva ("Continuar a compra ? S/N ")
+						leia(continuarCompra)
+					}
+					senao {
+						escreva("Desculpe, estoque indisponível.")
+					}
+					
+					
+				}
+				
+			}
+
+			se(continuarCompra == 's' ou continuarCompra == 'S'){
+					limpa()
+				}
+				senao se(continuarCompra == 'n' ou continuarCompra == 'N'){
+
+					/*
+					 * NOME DA LOJA
+						VALOR TOTAL DA COMPRA
+						MOSTRA 9% IMPOSTO EM CIMA DO VALOR TOTAL
+						OPÇÕES DE PAGAMENTO - 1 A VISTA COM 10% DESCONTO
+						OPÇÃO 2 - NO CARTÃO COM ACRESCIMO DE 10%
+						OPÇÃO 3 É EM DUAS VEZES COM 15% TOTAL DE ACRESCIMENTO - TEM QUE MOSTRA O VALOR DE CADA PARCELA
+						MOSTRA A NOTA FISCAL [SIMULADO] FINAL
+						TERMINOU VOLTA PARA O INICIO DO PROGRAMA
+					 */
+					escreva("LIVRARIA GEN\n")
+					escreva("Valor a pagar: "+valorFinal)
+					escreva("Esse produto teve 9% de tributos = R$"+math.arredondar(valorFinal*0.09,2))
+					
+					pare
+				}
+			
+		}//fecha o para geral
 		
 	}
 }
@@ -137,9 +165,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3444; 
+ * @POSICAO-CURSOR = 4352; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {nomeProdutos, 7, 9, 12}-{codigoProdutos, 19, 9, 14}-{estoque, 31, 10, 7}-{valoresdosProdutos, 44, 7, 18}-{carrinho, 56, 9, 8};
+ * @SIMBOLOS-INSPECIONADOS = {carrinho, 56, 9, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
