@@ -27,7 +27,6 @@ programa
 		codigoProdutos [7] = "G3-8 "
 		codigoProdutos [8] = "G3-9 "
 		codigoProdutos [9] = "G3-10 "
-<<<<<<< HEAD
 
 		inteiro estoque [10]
 		estoque[0] = 10
@@ -40,15 +39,7 @@ programa
 		estoque[7] = 10
 		estoque[8] = 10
 		estoque[9] = 10
-		
-	
-		
-=======
->>>>>>> b1aa2a0e2ea63ae744221ea342d4e21da688b0ae
-
-
-		
-		
+			
 		
 	}
 }
@@ -57,11 +48,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
-<<<<<<< HEAD
- * @POSICAO-CURSOR = 976; 
-=======
- * @POSICAO-CURSOR = 513; 
->>>>>>> b1aa2a0e2ea63ae744221ea342d4e21da688b0ae
+ * @POSICAO-CURSOR = 922; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {nomeProdutos, 7, 9, 12};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
