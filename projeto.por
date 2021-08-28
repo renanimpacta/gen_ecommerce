@@ -28,6 +28,35 @@ programa
 		codigoProdutos [8] = "G3-9 "
 		codigoProdutos [9] = "G3-10 "
 
+		<<<<<<< HEAD
+
+		inteiro estoque [10]
+		estoque[0] = 10
+		estoque[1] = 10
+		estoque[2] = 10
+		estoque[3] = 10
+		estoque[4] = 10
+		estoque[5] = 10
+		estoque[6] = 10
+		estoque[7] = 10
+		estoque[8] = 10
+		estoque[9] = 10
+
+		 //Frases para tela inicial
+	    escreva ("Livraria Gen")//nome da loja
+	    escreva ("Slogan -a definir")//nome do slogan
+
+
+		
+		//Frases para produtos
+		escreva ("Código do produto")
+		escreva ("Livros disponíveis")
+		escreva ("Valores")
+		escreva ("Estoque dos produtos")
+
+		//Continuar compra?
+		escreva ("Olá, deseja fazer uma compra ? S/N: ")//tela inicial final
+
 
 		
 		
@@ -39,7 +68,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 513; 
+ * @POSICAO-CURSOR = 1418; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {nomeProdutos, 7, 9, 12};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
