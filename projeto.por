@@ -28,10 +28,6 @@ programa
 		codigoProdutos [8] = "G3-9 "
 		codigoProdutos [9] = "G3-10 "
 
-=======
-<<<<<<< HEAD
->>>>>>> c65de5380a8d525d8e277bcbbea4ab27e52e87dd
-
 		inteiro estoque [10]
 		estoque[0] = 10
 		estoque[1] = 10
@@ -43,10 +39,6 @@ programa
 		estoque[7] = 10
 		estoque[8] = 10
 		estoque[9] = 10
-<<<<<<< HEAD
-			
-=======
-<<<<<<< HEAD
 
 		//Variáveis 
 		real valoresdosProdutos[10]  
@@ -61,19 +53,6 @@ programa
 		valoresdosProdutos[8] = 15.00
 		valoresdosProdutos[9] = 15.00
 		
-
-=======
-		
-	
->>>>>>> c65de5380a8d525d8e277bcbbea4ab27e52e87dd
-		
-=======
->>>>>>> b1aa2a0e2ea63ae744221ea342d4e21da688b0ae
-
-
-		
-		
->>>>>>> d616423eec847f5bf16958646e025c457c417031
 		
 	}
 }
@@ -82,19 +61,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
-<<<<<<< HEAD
- * @POSICAO-CURSOR = 922; 
-=======
-<<<<<<< HEAD
- * @POSICAO-CURSOR = 1399; 
-=======
-<<<<<<< HEAD
- * @POSICAO-CURSOR = 976; 
-=======
- * @POSICAO-CURSOR = 513; 
->>>>>>> b1aa2a0e2ea63ae744221ea342d4e21da688b0ae
->>>>>>> c65de5380a8d525d8e277bcbbea4ab27e52e87dd
->>>>>>> d616423eec847f5bf16958646e025c457c417031
+ * @POSICAO-CURSOR = 1270; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {nomeProdutos, 7, 9, 12};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
