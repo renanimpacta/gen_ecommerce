@@ -52,51 +52,36 @@ programa
 		valoresdosProdutos[7] = 30.00
 		valoresdosProdutos[8] = 15.00
 		valoresdosProdutos[9] = 15.00
+
+		cadeia carrinho[50]
 		
-<<<<<<< HEAD
-=======
-
-=======
-		
-	
->>>>>>> c65de5380a8d525d8e277bcbbea4ab27e52e87dd
-		
-=======
->>>>>>> b1aa2a0e2ea63ae744221ea342d4e21da688b0ae
-
-		<<<<<<< HEAD
-
-		inteiro estoque [10]
-		estoque[0] = 10
-		estoque[1] = 10
-		estoque[2] = 10
-		estoque[3] = 10
-		estoque[4] = 10
-		estoque[5] = 10
-		estoque[6] = 10
-		estoque[7] = 10
-		estoque[8] = 10
-		estoque[9] = 10
-
 		 //Frases para tela inicial
-	    escreva ("Livraria Gen")//nome da loja
-	    escreva ("Slogan -a definir")//nome do slogan
+	    escreva ("Livraria Gen\n")//nome da loja
+	    escreva ("Slogan -a definir\n\n")//nome do slogan
 
 
 		
 		//Frases para produtos
-		escreva ("Código do produto")
-		escreva ("Livros disponíveis")
-		escreva ("Valores")
-		escreva ("Estoque dos produtos")
+		
+		//Inserir a informação do vetor codigoProdutos - Renan
+		escreva ("Código\n")
+		para(inteiro x=0; x<10; x++){
+			escreva(codigoProdutos[x]+"\n")
+		}
+
+		//Inserir a informação do vetor nomeProdutos - Cássia
+		escreva ("Livros\t")
+
+		//Inserir a informação do vetor valoresdosProdutos - Lucas
+		escreva ("Valores\t\t")
+
+		//Inserir a informação do vetor estoque - Renan
+		escreva ("Estoque\n\n")
+
+
 
 		//Continuar compra?
-		escreva ("Olá, deseja fazer uma compra ? S/N: ")//tela inicial final
-
-
-		
-		
->>>>>>> 28df7b6f3e9b5abf91cef0c8c19f4bfa6e540081
+		escreva ("Olá, deseja fazer uma compra ? S/N: \n")//tela inicial final
 		
 	}
 }
@@ -105,25 +90,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
-<<<<<<< HEAD
- * @POSICAO-CURSOR = 1270; 
-=======
-<<<<<<< HEAD
- * @POSICAO-CURSOR = 1418; 
-=======
-<<<<<<< HEAD
- * @POSICAO-CURSOR = 1399; 
-=======
-<<<<<<< HEAD
- * @POSICAO-CURSOR = 976; 
-=======
- * @POSICAO-CURSOR = 513; 
->>>>>>> b1aa2a0e2ea63ae744221ea342d4e21da688b0ae
->>>>>>> c65de5380a8d525d8e277bcbbea4ab27e52e87dd
->>>>>>> d616423eec847f5bf16958646e025c457c417031
->>>>>>> 28df7b6f3e9b5abf91cef0c8c19f4bfa6e540081
+ * @POSICAO-CURSOR = 1626; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {nomeProdutos, 7, 9, 12};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
