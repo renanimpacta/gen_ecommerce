@@ -16,19 +16,19 @@ programa
 		nomeProdutos[8] = "O homem mais rico da babilônia"
 		nomeProdutos[9] = "Quem mexeu no meu queijo      "
 
-		cadeia codigoProdutos [10]//cássia
-		codigoProdutos [0] = "G3-1 " 
-		codigoProdutos [1] = "G3-2 "	
-		codigoProdutos [2] = "G3-3 "
-		codigoProdutos [3] = "G3-4 "
-		codigoProdutos [4] = "G3-5 "
-		codigoProdutos [5] = "G3-6 "
-		codigoProdutos [6] = "G3-7 "
-		codigoProdutos [7] = "G3-8 "
-		codigoProdutos [8] = "G3-9 "
-		codigoProdutos [9] = "G3-10 "
+		cadeia codigoProdutos [10], codigoEscolhido
+		codigoProdutos [0] = "G3-1"
+		codigoProdutos [1] = "G3-2"	
+		codigoProdutos [2] = "G3-3"
+		codigoProdutos [3] = "G3-4"
+		codigoProdutos [4] = "G3-5"
+		codigoProdutos [5] = "G3-6"
+		codigoProdutos [6] = "G3-7"
+		codigoProdutos [7] = "G3-8"
+		codigoProdutos [8] = "G3-9"
+		codigoProdutos [9] = "G3-10"
 
-		inteiro estoque [10]
+		inteiro estoque [10], estoqueEscolhido
 		estoque[0] = 10
 		estoque[1] = 10
 		estoque[2] = 10
@@ -77,7 +77,32 @@ programa
 		senao{
 			escreva("\n\nATÉ BREVE!!!!")
 		}
-
+		
+		//para(inteiro x=0; x<10; x++){}
+			escreva("Selecione o código do produto que você deseja: ")
+			leia(codigoEscolhido)
+		para(inteiro x=0; x<10; x++){
+			se (codigoEscolhido == codigoProdutos[x]){
+				limpa()
+				escreva ("Código:\tLivro:\t                      Valores:\tEstoque:\n")
+				escreva (codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
+				escreva ("\n")
+				
+				escreva ("Digite a quantidade necessária: ")
+				leia(estoqueEscolhido)
+				se (estoqueEscolhido <= estoque[x]) {
+					escreva ("Continuar a compra ? S/N ")
+				}
+				senao {
+					escreva("Desculpe, estoque indisponível.")
+				}
+				
+				
+			}
+		}
+		
+			
+			
 
 		//Continuar compra?
 		
@@ -88,9 +113,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2241; 
+ * @POSICAO-CURSOR = 2827; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {nomeProdutos, 7, 9, 12}-{codigoProdutos, 19, 9, 14}-{estoque, 31, 10, 7}-{valoresdosProdutos, 44, 7, 18}-{carrinho, 56, 9, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
