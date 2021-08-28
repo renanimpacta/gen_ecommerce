@@ -53,7 +53,7 @@ programa
 		valoresdosProdutos[8] = 15.00
 		valoresdosProdutos[9] = 15.00
 
-		cadeia carrinho[10]
+		cadeia carrinho[10] 
 		caracter desejaComprar = 'x'
 		
 		 //Frases para tela inicial
@@ -91,7 +91,15 @@ programa
 				escreva ("Digite a quantidade necessária: ")
 				leia(estoqueEscolhido)
 				se (estoqueEscolhido <= estoque[x]) {
+					limpa()
+					escreva ("carrinho\n")
+
+					carrinho[x]=codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+(valoresdosProdutos[x]*estoqueEscolhido)+"\t"+"\n"
+					
+					escreva (carrinho[x])
+					
 					escreva ("Continuar a compra ? S/N ")
+					leia(desejaComprar)
 				}
 				senao {
 					escreva("Desculpe, estoque indisponível.")
@@ -100,8 +108,24 @@ programa
 				
 			}
 		}
-		
-			
+				se (desejaComprar == 's' ou desejaComprar == 'S')
+				{
+				 limpa()
+				escreva("Código:\tLivros:\t                       Valores:\tEstoque:\n")
+				para(inteiro x=0; x<10; x++){
+				escreva(codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
+				
+				}
+
+				escreva("Selecione o código do produto que você deseja: ")
+				leia(codigoEscolhido)
+				
+				escreva("\n")
+		}
+				senao{
+				escreva("\n\nATÉ BREVE!!!!")
+					
+				}
 			
 
 		//Continuar compra?
@@ -113,7 +137,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2827; 
+ * @POSICAO-CURSOR = 3444; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {nomeProdutos, 7, 9, 12}-{codigoProdutos, 19, 9, 14}-{estoque, 31, 10, 7}-{valoresdosProdutos, 44, 7, 18}-{carrinho, 56, 9, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
