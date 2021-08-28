@@ -5,16 +5,16 @@ programa
 	{
 		//Variáveis
 		cadeia nomeProdutos[10]
-		nomeProdutos[0] = "Mindset"
-		nomeProdutos[1] = "Poder do hábito"
-		nomeProdutos[2] = "O segredo"
-		nomeProdutos[3] = "O corpo fala"
-		nomeProdutos[4] = "Pai rico pai pobre"
-		nomeProdutos[5] = "O milagre da manhã"
-		nomeProdutos[6] = "Comunicação não violenta"
-		nomeProdutos[7] = "O poder do agora"
+		nomeProdutos[0] = "Mindset                       "
+		nomeProdutos[1] = "Poder do hábito               "
+		nomeProdutos[2] = "O segredo                     "
+		nomeProdutos[3] = "O corpo fala                  "
+		nomeProdutos[4] = "Pai rico pai pobre            "
+		nomeProdutos[5] = "O milagre da manhã            "
+		nomeProdutos[6] = "Comunicação não violenta      "
+		nomeProdutos[7] = "O poder do agora              "
 		nomeProdutos[8] = "O homem mais rico da babilônia"
-		nomeProdutos[9] = "Quem mexeu no meu queijo"
+		nomeProdutos[9] = "Quem mexeu no meu queijo      "
 
 		cadeia codigoProdutos [10]//cássia
 		codigoProdutos [0] = "G3-1 " 
@@ -53,35 +53,33 @@ programa
 		valoresdosProdutos[8] = 15.00
 		valoresdosProdutos[9] = 15.00
 
-		cadeia carrinho[50]
+		cadeia carrinho[10]
+		caracter desejaComprar = 'x'
 		
 		 //Frases para tela inicial
-	    escreva ("Livraria Gen\n")//nome da loja
-	    escreva ("Slogan -a definir\n\n")//nome do slogan
+	    	escreva ("Livraria Gen\n")//nome da loja
+	    	escreva ("Slogan -a definir\n\n")//nome do slogan
 
-
+		escreva ("Olá, deseja fazer uma compra ? S/N: ")//tela inicial final
+		leia(desejaComprar)
 		
 		//Frases para produtos
 		
 		//Inserir a informação do vetor codigoProdutos - Renan
-		escreva ("Código\n")
-		para(inteiro x=0; x<10; x++){
-			escreva(codigoProdutos[x]+"\n")
+		se(desejaComprar == 's' ou desejaComprar == 'S'){
+			limpa()
+			escreva("Código:\tLivros:\t                       Valores:\tEstoque:\n")
+			para(inteiro x=0; x<10; x++){
+				escreva(codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
+			}
+			escreva("\n")
 		}
-
-		//Inserir a informação do vetor nomeProdutos - Cássia
-		escreva ("Livros\t")
-
-		//Inserir a informação do vetor valoresdosProdutos - Lucas
-		escreva ("Valores\t\t")
-
-		//Inserir a informação do vetor estoque - Renan
-		escreva ("Estoque\n\n")
-
+		senao{
+			escreva("\n\nATÉ BREVE!!!!")
+		}
 
 
 		//Continuar compra?
-		escreva ("Olá, deseja fazer uma compra ? S/N: \n")//tela inicial final
 		
 	}
 }
@@ -90,7 +88,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1626; 
+ * @POSICAO-CURSOR = 2241; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
