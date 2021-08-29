@@ -233,34 +233,75 @@ programa
 					}
 					se (opcaoPgto == '1'){
 						
-						para (x=0;x<10;x++){
+					
+						limpa()
+						escreva("CUPOM FISCAL\n")
+						escreva("Item\t                        Código\t Vl Unit\t Quant\t Total Unit\n")
+						para(x=0;x<10;x++){
+							se (estoqueEscolhido[x]!=0){
+                              	 escreva(nomeProdutos[x]+"\t"+codigoProdutos[x]+"\t    "+valoresdosProdutos[x]+"\t   "+estoqueEscolhido[x]+"\t   "+(valoresdosProdutos[x]*estoqueEscolhido[x])+"\n")
+							}
+						}
+						escreva("\n")
+						escreva("Imposto\t Forma de Pagamento\n")
+						escreva( "9%\t   A/V\n\n")
+						escreva("Valor Total\n")
+						escreva(valorFinal+"\n\n")
+
+							para (x=0;x<10;x++){
 						estoque[x]= estoque[x]- estoqueEscolhido[x]
 						estoqueEscolhido[x]=0
 						carrinho[x]=" "
 						continuarCompra='x'
 						}
-						escreva("\nPago à vista\n")
+						
 						
 					}
 						
 					senao se (opcaoPgto == '2'){
+						limpa()
+						escreva("CUPOM FISCAL\n")
+						escreva("Item\t                        Código\t Vl Unit\t Quant\t Total Unit\n")
+						para(x=0;x<10;x++){
+							se (estoqueEscolhido[x]!=0){
+                              	 escreva(nomeProdutos[x]+"\t"+codigoProdutos[x]+"\t    "+valoresdosProdutos[x]+"\t   "+estoqueEscolhido[x]+"\t   "+(valoresdosProdutos[x]*estoqueEscolhido[x])+"\n")
+							}
+						}
+						escreva("\n")
+						escreva("Imposto\t Forma de Pagamento\n")
+						escreva( "9%\t   C/C\n\n")
+						escreva("Valor Total\n")
+						escreva((valorFinal+(valorFinal*0.10))+"\n\n")
 						para (x=0;x<10;x++){
 						estoque[x]= estoque[x]- estoqueEscolhido[x]
 						estoqueEscolhido[x]=0
 						carrinho[x]=" "
 						continuarCompra='x'
 						}
-						escreva("\nCartão com acrescimo\n")
+						
 					}
 	
 					senao se (opcaoPgto == '3'){
+						limpa()
+						escreva("CUPOM FISCAL\n")
+						escreva("Item\t                        Código\t Vl Unit\t Quant\t Total Unit\n")
+						para(x=0;x<10;x++){
+							se (estoqueEscolhido[x]!=0){
+                              	 escreva(nomeProdutos[x]+"\t"+codigoProdutos[x]+"\t    "+valoresdosProdutos[x]+"\t   "+estoqueEscolhido[x]+"\t   "+(valoresdosProdutos[x]*estoqueEscolhido[x])+"\n")
+							}
+						}
+						escreva("\n")
+						escreva("Imposto\t Forma de Pagamento\n")
+						escreva( "9%\t   2X C/C\n\n")
+						escreva("Valor Total\n")
+						escreva((valorFinal+(valorFinal*0.15))+"\n\n")
 						para (x=0;x<10;x++){
 						estoque[x]= estoque[x]- estoqueEscolhido[x]
 						estoqueEscolhido[x]=0
 						carrinho[x]=" "
 						continuarCompra='x'
 						}
-						escreva("\n2x (acrescimento de 15%)\n")
+						
 					}
 					senao{
 						limpa()
@@ -279,7 +320,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1248; 
+ * @POSICAO-CURSOR = 9591; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
