@@ -66,21 +66,22 @@ programa
 		carrinho[9] = " "
 		
 		real valorTotal = 0.0, valorFinal = 0.0
-		caracter desejaComprar = 'x', continuarCompra = 'x'
+		caracter desejaComprar = 'x', continuarCompra = 'x', opcaoPgto= 'x'
 
 		
 		 //Frases para tela inicial
+		enquanto(opcaoPgto=='x'ou opcaoPgto=='1' ou opcaoPgto=='2' ou opcaoPgto=='3'){
 	    	escreva ("Livraria Gen\n")//nome da loja
 	    	escreva ("Slogan -a definir\n\n")//nome do slogan
 
 		escreva ("Olá, deseja fazer uma compra ? S/N: ")//tela inicial final
 		leia(desejaComprar)
 		
-		para(inteiro y=0; y<100; y++){
+		
 			
-
+			para(inteiro y=0; y<100; y++){
 			se(desejaComprar == 's' ou desejaComprar == 'S'){
-				limpa()
+				//limpa()
 				escreva("Código:\tLivros:\t                       Valores:\tEstoque:\n")
 				
 				para(inteiro x=0; x<10; x++){
@@ -108,7 +109,7 @@ programa
 					escreva ("Digite a quantidade necessária: ")
 					leia(estoqueEscolhido)
 					
-					se (estoqueEscolhido <= estoque[x]) {
+					se (estoqueEscolhido <= estoque[x] e carrinho[x]==" ") {
 						limpa()
 						escreva ("CARRINHO\n")
 						escreva ("Código:\tLivro:\t                      Valor:\tQuantidade:\n")
@@ -125,19 +126,22 @@ programa
 						escreva ("Continuar a compra ? S/N ")
 						leia(continuarCompra)
 					}
-					senao {
-						escreva("Desculpe, estoque indisponível.")
+					senao se (estoqueEscolhido > estoque[x]) {
+						escreva("\n\nDesculpe, estoque indisponível.\n\n")
 					}
-					
+					senao {
+						escreva("\n\nNão é possível adicionar dois produtos iguais. Escolha outro.\n\n")
+					}
 					
 				}
 				
 			}
 
 			se(continuarCompra == 's' ou continuarCompra == 'S'){
-					limpa()
+					//limpa()
 				}
 				senao se(continuarCompra == 'n' ou continuarCompra == 'N'){
+					
 
 					/*
 					 * NOME DA LOJA
@@ -150,14 +154,40 @@ programa
 						TERMINOU VOLTA PARA O INICIO DO PROGRAMA
 					 */
 					escreva("LIVRARIA GEN\n")
-					escreva("Valor a pagar: "+valorFinal)
-					escreva("Esse produto teve 9% de tributos = R$"+math.arredondar(valorFinal*0.09,2))
+					escreva("\nValor a pagar: "+valorFinal)
+					escreva("\nEsse produto teve 9% de tributos = R$"+math.arredondar(valorFinal*0.09,2))
+
+					//opção de pagamento
+					escreva("\nOpções de pagamento")
+					escreva("\nOpção 1 - A vista com 10% de desconto: "+ (valorFinal - (valorFinal*0.10) ))	
+					escreva("\nOpção 2 - No cartão com acrescimento de 10%: " + (valorFinal + (valorFinal*0.10) ))
+					escreva("\nOpção 3- Em 2x(acrescimento de 15%): "+(valorFinal + (valorFinal*0.15) ) +" 2 vezes de "+ ((valorFinal + (valorFinal*0.15))/2 ) )
+					escreva("\nDigite a opção que você prefere: ")
+					leia(opcaoPgto)
+
+					se (opcaoPgto == '1'){
+						escreva("\nPago à vista\n")
+					}
 					
-					pare
-				}
+					senao se (opcaoPgto == '2'){
+						escreva("\nCartão com acrescimo\n")
+					}
+
+					senao se (opcaoPgto == '3'){
+						escreva("\n2x (acrescimento de 15%)\n")
+					}
+					senao{
+						escreva("\nEntrar com opção válida\n.")
+					}
+					
+						
+					
+					
+					
+					pare}
 			
 		}//fecha o para geral
-		
+		}//fecha enquanto geral
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -165,9 +195,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4352; 
+ * @POSICAO-CURSOR = 5581; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {carrinho, 56, 9, 8};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
