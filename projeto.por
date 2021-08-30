@@ -182,22 +182,19 @@ programa
 						senao se (estoqueEscolhido[x] > estoque[x]) {
 							limpa()
 							escreva("\n\n<Desculpe, estoque indisponível - Escolha novamente!!>\n\n")
-							contagem(5)
-							limpa()
 							pare
 						}
 						senao se (carrinho[x]!=" ") {
 							limpa()
 							escreva("\n\n<Não é possível adicionar dois produtos iguais. Escolha outro!!>\n\n")
-							contagem(5)
-							limpa()
+							
+							contagem(5) //contagem regressiva de 5 segundos/ Já tem o "limpa()" no final
+							
 							pare
 						}
 						senao se (estoqueEscolhido[x]<=0){
 							limpa()
 							escreva("\nQuantidade inválida - Escolha novamente!!\n\n")
-							contagem(5)
-							limpa()
 							pare
 							
 						}
@@ -205,6 +202,7 @@ programa
 					senao se (codigoEscolhido != codigoProdutos[0] e codigoEscolhido != codigoProdutos[1] e codigoEscolhido != codigoProdutos[2] e codigoEscolhido != codigoProdutos[3] e codigoEscolhido != codigoProdutos[4] e codigoEscolhido != codigoProdutos[5] e codigoEscolhido != codigoProdutos[6] e codigoEscolhido != codigoProdutos[7] e codigoEscolhido != codigoProdutos[8] e codigoEscolhido != codigoProdutos[9]) {
 						limpa()
 						escreva("\nProduto inválido\n\n")
+						contagem(5) //contagem regressiva de 5 segundos / Já tem o "limpa()" no final
 						pare
 					}	
 					
@@ -265,9 +263,6 @@ programa
 						carrinho[x]=" "
 						continuarCompra=""
 						}
-
-						contagem(10)
-						limpa()
 						
 					}
 						
@@ -296,10 +291,6 @@ programa
 						carrinho[x]=" "
 						continuarCompra=""
 						}
-						
-						contagem(10)
-						limpa()
-						
 					}
 	
 					senao se (opcaoPgto == "3"){
@@ -326,9 +317,6 @@ programa
 						carrinho[x]=" "
 						continuarCompra=""
 						}
-
-						contagem(10)
-						limpa()
 						
 					}
 					senao{
@@ -344,13 +332,19 @@ programa
 	}
 
 	funcao contagem(inteiro segundos){
+		
+		//"segundos" é um parâmetro que deve ser substituído por qualquer número inteiro na hora de chamar a função lá no código
+		//Ex: contagem(10) faz uma contagem de 10 segundos, contagem(5) faz uma contagem de 5 segundos
+		// esse parâmetro é responsável por controlar o "enquanto" dentro da função e não precisa ter valor atribuido na mesma.
 		inteiro contador=segundos
+		
 		escreva("Você será redirecionado em... ")
 		enquanto(contador > 0){
 			escreva(contador+"..")
 			contador = contador - 1
 			Util.aguarde(1000)
 		}
+		limpa()
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -358,7 +352,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 9637; 
+ * @POSICAO-CURSOR = 6366; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
