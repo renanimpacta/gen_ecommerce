@@ -2,6 +2,7 @@ programa
 {
 	inclua biblioteca Matematica --> math
 	inclua biblioteca Util
+	inclua biblioteca Texto
 	funcao inicio()
 	{
 		
@@ -127,8 +128,11 @@ programa
 				escreva("Selecione o código do produto que você deseja: ")
 				leia(codigoEscolhido)
 				
+				
 				//MOSTRA O PRODUTO SELECIONADO SELECIONA A QUANTIDADE E ADICIONA NO CARRINHO
-				para(x=0; x<10; x++){
+				para(x=0; x<10; x++){	
+					
+					
 					se (codigoEscolhido == codigoProdutos[x]){
 						limpa()
 						escreva("<LIVRO ESCOLHIDO>\n\n")
@@ -180,6 +184,8 @@ programa
 						senao se (estoqueEscolhido[x] > estoque[x]) {
 							limpa()
 							escreva("\n\n<Desculpe, estoque indisponível - Escolha novamente!!>\n\n")
+
+							contagem(5) //contagem regressiva de 5 segundos/ Já tem o "limpa()" no final
 							pare
 						}
 						senao se (carrinho[x]!=" ") {
@@ -193,6 +199,8 @@ programa
 						senao se (estoqueEscolhido[x]<=0){
 							limpa()
 							escreva("\nQuantidade inválida - Escolha novamente!!\n\n")
+
+							contagem(5) //contagem regressiva de 5 segundos/ Já tem o "limpa()" no final
 							pare
 							
 						}
@@ -224,7 +232,7 @@ programa
 					escreva("\n\n<Opções de pagamento>")
 					escreva("\nOPÇÃO (1) - A vista com 10% de desconto: R$"+ (valorFinal - (valorFinal*0.10) ))	
 					escreva("\nOPÇÃO (2) - No cartão com acrescimento de 10%: R$" + (valorFinal + (valorFinal*0.10) ))
-					escreva("\nOPÇÃO (3) - Em 2x(acrescimento de 15%): R$"+(valorFinal + (valorFinal*0.15) ) +" 2 vezes de "+ ((valorFinal + (valorFinal*0.15))/2 ) )
+					escreva("\nOPÇÃO (3) - Em 2x(acrescimento de 15%): R$"+(valorFinal + (valorFinal*0.15) ) +" 2 vezes de R$ "+ ((valorFinal + (valorFinal*0.15))/2 ) )
 					escreva("\n\nDigite a opção que você prefere: ")
 					leia(opcaoPgto)
 					
@@ -234,7 +242,7 @@ programa
 						escreva("<Opções de pagamento>")
 						escreva("\nOPÇÃO (1) - A vista com 10% de desconto: R$"+ (valorFinal - (valorFinal*0.10) ))	
 						escreva("\nOPÇÃO (2) - No cartão com acrescimento de 10%: R$" + (valorFinal + (valorFinal*0.10) ))
-						escreva("\nOPÇÃO (3) - Em 2x(acrescimento de 15%): R$"+(valorFinal + (valorFinal*0.15) ) +" 2 vezes de "+ ((valorFinal + (valorFinal*0.15))/2 ) )
+						escreva("\nOPÇÃO (3) - Em 2x(acrescimento de 15%): R$"+(valorFinal + (valorFinal*0.15) ) +" 2 vezes de R$ "+ ((valorFinal + (valorFinal*0.15))/2 ) )
 						escreva("\n\nDigite a opção que você prefere: ")
 							leia(opcaoPgto)
 					}
@@ -247,6 +255,7 @@ programa
 						para(x=0;x<10;x++){
 							se (estoqueEscolhido[x]!=0){
                               	 escreva(nomeProdutos[x]+"\t"+codigoProdutos[x]+"\t   R$"+valoresdosProdutos[x]+"\t   "+estoqueEscolhido[x]+"\t  R$"+(valoresdosProdutos[x]*estoqueEscolhido[x])+"\n")
+                              	 
 							}
 						}
 						escreva("\n")
@@ -255,6 +264,8 @@ programa
 						escreva("VALOR TOTAL\n")
 						escreva("R$"+(valorFinal - (valorFinal*0.10))+"\n")
 						escreva("==========================================================================\n\n")
+
+						contagem(15) //contagem regressiva de 10 segundos/ Já tem o "limpa()" no final
 
 						para (x=0;x<10;x++){
 						estoque[x]= estoque[x]- estoqueEscolhido[x]
@@ -284,6 +295,8 @@ programa
 						escreva("VALOR TOTAL\n")
 						escreva("R$"+(valorFinal+(valorFinal*0.10))+"\n")
 						escreva("==========================================================================\n\n")
+
+						contagem(15) //contagem regressiva de 5 segundos/ Já tem o "limpa()" no final
 						
 						para (x=0;x<10;x++){
 						estoque[x]= estoque[x]- estoqueEscolhido[x]
@@ -311,6 +324,8 @@ programa
 						escreva("VALOR TOTAL\n")
 						escreva("R$"+(valorFinal+(valorFinal*0.15))+" - Duas vezes de (R$"+((valorFinal+(valorFinal*0.15))/2)+")\n")
 						escreva("==========================================================================\n\n")
+
+						contagem(15) //contagem regressiva de 5 segundos/ Já tem o "limpa()" no final
 						
 						para (x=0;x<10;x++){
 						estoque[x]= estoque[x]- estoqueEscolhido[x]
@@ -356,9 +371,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 11754; 
+ * @POSICAO-CURSOR = 8762; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {QUANTIDADE, 82, 10, 10}-{x, 86, 10, 1};
+ * @SIMBOLOS-INSPECIONADOS = {codigoEscolhido, 23, 30, 15}-{x, 87, 10, 1};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
