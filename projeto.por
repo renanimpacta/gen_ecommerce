@@ -79,7 +79,7 @@ programa
 		carrinho[8] = " "
 		carrinho[9] = " "
 
-		inteiro QUANTIDADE = 11
+		inteiro QUANTIDADE = 2 // Controla o laço de compra
 
 		//Variáveis -----------------------------------------------------------------------------
 		real valorTotal = 0.0, valorFinal = 0.0
@@ -111,8 +111,6 @@ programa
 				se(desejaComprar == "s" ou desejaComprar == "S"){
 					escreva("Código:\tLivros:\t                       Valores:\tEstoque:\n")
 
-					QUANTIDADE = 11 //Controla o laço
-					
 					para( x=0; x<10; x++){
 						escreva(codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
 					}
@@ -201,6 +199,7 @@ programa
 					}
 					senao se (codigoEscolhido != codigoProdutos[0] e codigoEscolhido != codigoProdutos[1] e codigoEscolhido != codigoProdutos[2] e codigoEscolhido != codigoProdutos[3] e codigoEscolhido != codigoProdutos[4] e codigoEscolhido != codigoProdutos[5] e codigoEscolhido != codigoProdutos[6] e codigoEscolhido != codigoProdutos[7] e codigoEscolhido != codigoProdutos[8] e codigoEscolhido != codigoProdutos[9]) {
 						limpa()
+						QUANTIDADE ++ //roda o para de novo
 						escreva("\nProduto inválido\n\n")
 						contagem(5) //contagem regressiva de 5 segundos / Já tem o "limpa()" no final
 						pare
@@ -262,6 +261,7 @@ programa
 						estoqueEscolhido[x]=0
 						carrinho[x]=" "
 						continuarCompra=""
+						QUANTIDADE = 2
 						}
 						
 					}
@@ -290,6 +290,7 @@ programa
 						estoqueEscolhido[x]=0
 						carrinho[x]=" "
 						continuarCompra=""
+						QUANTIDADE = 2
 						}
 					}
 	
@@ -308,7 +309,7 @@ programa
 						escreva("IMPOSTO\t FORMA DE PAGAMENTO\n")
 						escreva( "9%\t   2x C/C (+15%)\n\n")
 						escreva("VALOR TOTAL\n")
-						escreva("R$"+(valorFinal+(valorFinal*0.15))+"\nDuas vezes de (R$"+((valorFinal+(valorFinal*0.15))/2)+")\n")
+						escreva("R$"+(valorFinal+(valorFinal*0.15))+" - Duas vezes de (R$"+((valorFinal+(valorFinal*0.15))/2)+")\n")
 						escreva("==========================================================================\n\n")
 						
 						para (x=0;x<10;x++){
@@ -316,6 +317,7 @@ programa
 						estoqueEscolhido[x]=0
 						carrinho[x]=" "
 						continuarCompra=""
+						QUANTIDADE = 2
 						}
 						
 					}
@@ -340,13 +342,13 @@ programa
 		
 		inteiro contador = segundos
 		
-		escreva("Você será redirecionado em... ")
+		escreva("Você será redirecionado em ") //Escreve a frase uma só ves (fora do laço)
 		enquanto(contador > 0){
-			escreva(contador+"..")
+			escreva(".."+contador) //Escreve os números enquanto o laço roda
 			contador = contador - 1
 			Util.aguarde(1000)
 		}
-		limpa()
+		limpa()// limpa o conteúdo no final da contagem
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -354,9 +356,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12672; 
+ * @POSICAO-CURSOR = 11754; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {QUANTIDADE, 82, 10, 10}-{x, 86, 10, 1};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
