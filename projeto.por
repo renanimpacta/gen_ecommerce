@@ -75,11 +75,12 @@ programa
 		
 		//TELA INICIAL DO E-COMMERCE ------------------------------------------------------------
 		enquanto(opcaoPgto=='x'ou opcaoPgto=='1' ou opcaoPgto=='2' ou opcaoPgto=='3'){
-		    	escreva ("Livraria Gen\n")//nome da loja
-		    	escreva ("Slogan -a definir\n\n")//nome do slogan
+		    	escreva ("...:::|LIVRARIA GEN|:::...\n")//nome da loja
+		    	escreva (" Leia um livro e vá além\n\n")//nome do slogan
 	
-			escreva ("Olá, deseja fazer uma compra ? S/N: ")
+			escreva ("Olá, deseja fazer uma compra ? Sim(S)/Não(N): ")
 			leia(desejaComprar)
+			limpa()
 		
 		//----------------------------------------------------------------------------------------	
 			para(inteiro y=0; y<QUANTIDADE; y++){
@@ -110,6 +111,7 @@ programa
 				para(inteiro x=0; x<10; x++){
 					se (codigoEscolhido == codigoProdutos[x]){
 						limpa()
+						escreva("LIVRO ESCOLHIDO\n\n")
 						escreva ("Código:\tLivro:\t                      Valores:\tEstoque:\n")
 						escreva (codigoProdutos[x]+"\t"+nomeProdutos[x]+"\t"+valoresdosProdutos[x]+"\t"+estoque[x]+"\n")
 						escreva ("\n")
@@ -120,21 +122,22 @@ programa
 						se (estoqueEscolhido <= estoque[x] e carrinho[x]==" ") {
 							limpa()
 							
-							escreva ("CARRINHO\n")
+							escreva ("CARRINHO\n\n")
 							escreva ("Código:\tLivro:\t                      Valor:\tQuantidade:\n")
 							carrinho[x]=codigoProdutos[x]+"\t"+nomeProdutos[x]+"\tR$"+(valoresdosProdutos[x]*estoqueEscolhido)+"\t   "+estoqueEscolhido+"\n"
-							
 							para(inteiro c=0; c<10; c++){
 								se(carrinho[c] != " "){
 									escreva (carrinho[c])
 									valorTotal = valoresdosProdutos[x]*estoqueEscolhido
 								}
 							}
+							escreva("\n")
 							
 							valorFinal = valorTotal+valorFinal
 							
-							escreva ("Continuar a compra ? S/N ")
+							escreva ("Continuar a compra ? Sim(S)/Não(N): ")
 							leia(continuarCompra)
+							limpa()
 						}
 						senao se (estoqueEscolhido > estoque[x]) {
 							escreva("\n\nDesculpe, estoque indisponível.\n\n")
@@ -191,9 +194,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3091; 
+ * @POSICAO-CURSOR = 4322; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {QUANTIDADE, 69, 10, 10}-{y, 85, 16, 1};
+ * @SIMBOLOS-INSPECIONADOS = {QUANTIDADE, 69, 10, 10}-{y, 86, 16, 1};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
