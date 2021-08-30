@@ -336,7 +336,9 @@ programa
 		//"segundos" é um parâmetro que deve ser substituído por qualquer número inteiro na hora de chamar a função lá no código
 		//Ex: contagem(10) faz uma contagem de 10 segundos, contagem(5) faz uma contagem de 5 segundos
 		// esse parâmetro é responsável por controlar o "enquanto" dentro da função e não precisa ter valor atribuido na mesma.
-		inteiro contador=segundos
+		//Entenda ele como se fosse uma variável que só recebe valor quando a função é chamada lá no código.
+		
+		inteiro contador = segundos
 		
 		escreva("Você será redirecionado em... ")
 		enquanto(contador > 0){
@@ -352,7 +354,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6366; 
+ * @POSICAO-CURSOR = 12672; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
