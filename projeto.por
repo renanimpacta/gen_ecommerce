@@ -184,6 +184,9 @@ programa
 						senao se (estoqueEscolhido[x] > estoque[x]) {
 							limpa()
 							escreva("\n\n<Desculpe, estoque indisponível - Escolha novamente!!>\n\n")
+							//para (x=0; x<10; x++){
+							//	estoqueEscolhido[x]=0
+							//}
 
 							contagem(5) //contagem regressiva de 5 segundos/ Já tem o "limpa()" no final
 							pare
@@ -211,8 +214,9 @@ programa
 						escreva("\nProduto inválido\n\n")
 						contagem(5) //contagem regressiva de 5 segundos / Já tem o "limpa()" no final
 						pare
+
 					}	
-					
+
 				}
 				
 				
@@ -253,7 +257,7 @@ programa
 						escreva("CUPOM FISCAL\n")
 						escreva("ITEM:\t                        CÓDIGO\t  VL UNIT\t QUANT\t TOTAL UNIT\n")
 						para(x=0;x<10;x++){
-							se (estoqueEscolhido[x]!=0){
+							se(estoqueEscolhido[x]!=0 e (estoque[x]-estoqueEscolhido[x]) >=0 e estoqueEscolhido[x] > 0){
                               	 escreva(nomeProdutos[x]+"\t"+codigoProdutos[x]+"\t   R$"+valoresdosProdutos[x]+"\t   "+estoqueEscolhido[x]+"\t  R$"+(valoresdosProdutos[x]*estoqueEscolhido[x])+"\n")
                               	 
 							}
@@ -269,10 +273,14 @@ programa
 
 						para (x=0;x<10;x++){
 						estoque[x]= estoque[x]- estoqueEscolhido[x]
+						se(estoque[x]<0 ou estoque[x]>10){
+							estoque[x]= estoque[x]+ estoqueEscolhido[x]
+						}
 						estoqueEscolhido[x]=0
 						carrinho[x]=" "
 						continuarCompra=""
 						QUANTIDADE = 2
+						valorFinal=0
 						}
 						
 					}
@@ -285,7 +293,7 @@ programa
 						escreva("CUPOM FISCAL\n")
 						escreva("ITEM:\t                        CÓDIGO\t  VL UNIT\t QUANT\t TOTAL UNIT\n")
 						para(x=0;x<10;x++){
-							se (estoqueEscolhido[x]!=0){
+							se (estoqueEscolhido[x]!=0 e (estoque[x]-estoqueEscolhido[x]) >=0 e estoqueEscolhido[x] > 0 ){
                               	 escreva(nomeProdutos[x]+"\t"+codigoProdutos[x]+"\t   R$"+valoresdosProdutos[x]+"\t   "+estoqueEscolhido[x]+"\t  R$"+(valoresdosProdutos[x]*estoqueEscolhido[x])+"\n")
 							}
 						}
@@ -300,10 +308,14 @@ programa
 						
 						para (x=0;x<10;x++){
 						estoque[x]= estoque[x]- estoqueEscolhido[x]
+						se(estoque[x]<0 ou estoque[x]>10){
+							estoque[x]= estoque[x]+ estoqueEscolhido[x]
+						}
 						estoqueEscolhido[x]=0
 						carrinho[x]=" "
 						continuarCompra=""
 						QUANTIDADE = 2
+						valorFinal=0
 						}
 					}
 	
@@ -314,7 +326,7 @@ programa
 						escreva("CUPOM FISCAL\n")
 						escreva("ITEM:\t                        CÓDIGO\t  VL UNIT\t QUANT\t TOTAL UNIT\n")
 						para(x=0;x<10;x++){
-							se (estoqueEscolhido[x]!=0){
+							se (estoqueEscolhido[x]!=0 e (estoque[x]-estoqueEscolhido[x]) >=0 e estoqueEscolhido[x] > 0 e estoqueEscolhido[x] > 0){
                               	 escreva(nomeProdutos[x]+"\t"+codigoProdutos[x]+"\t   R$"+valoresdosProdutos[x]+"\t   "+estoqueEscolhido[x]+"\t  R$"+(valoresdosProdutos[x]*estoqueEscolhido[x])+"\n")
 							}
 						}
@@ -329,10 +341,14 @@ programa
 						
 						para (x=0;x<10;x++){
 						estoque[x]= estoque[x]- estoqueEscolhido[x]
+						se(estoque[x]<0 ou estoque[x]>10){
+							estoque[x]= estoque[x]+ estoqueEscolhido[x]
+						}
 						estoqueEscolhido[x]=0
 						carrinho[x]=" "
 						continuarCompra=""
 						QUANTIDADE = 2
+						valorFinal=0
 						}
 						
 					}
@@ -371,9 +387,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 8762; 
+ * @POSICAO-CURSOR = 12268; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {codigoEscolhido, 23, 30, 15}-{x, 87, 10, 1};
+ * @SIMBOLOS-INSPECIONADOS = {nomeProdutos, 11, 9, 12}-{codigoProdutos, 23, 9, 14}-{estoque, 35, 10, 7}-{estoqueEscolhido, 47, 11, 16}-{valoresdosProdutos, 59, 7, 18}-{carrinho, 71, 9, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
